@@ -12,8 +12,6 @@ spec:
     spec:
       containers:
         - name: rok8s-example
-          # Replace `quay.io/example-org/rok8s-scripts-test`
-          #   with your image repository
           # `latest` will be replaced with $CI_SHA1 by k8s-deploy
           image: quay.io/maryg5/rok8s-min:latest
           ports:

@@ -10,6 +10,7 @@ references:
         echo 'export CI_BUILD_NUM=$CIRCLE_BUILD_NUM' >> ${BASH_ENV}
         echo 'export CI_TAG=$CIRCLE_TAG' >> ${BASH_ENV}
         echo 'export ROK8S_INSTALL_PATH=${HOME}' >> ${BASH_ENV}
+        echo 'export GOOGLE_APPLICATION_CREDENTIALS="/tmp/gcloud_key.json"'
 
   build_image: &build_image
     run:
@@ -23,6 +24,7 @@ references:
     run:
       name: Deploy to Production
       command: |
+        prepare-gcloud
         docker-push -f deploy/production.config
         prepare-kubectl
         k8s-deploy-and-verify -f deploy/production.config
