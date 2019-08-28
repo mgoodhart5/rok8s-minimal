@@ -12,7 +12,7 @@ references:
         echo 'export ROK8S_INSTALL_PATH=${HOME}' >> ${BASH_ENV}
         echo 'export GOOGLE_APPLICATION_CREDENTIALS="/tmp/gcloud_key.json"' >> ${BASH_ENV}
         echo 'export GCP_PROJECT=mg-k8s-workshop' >> ${BASH_ENV}
-        echo 'export GCP_REGION=us-central1' >> ${BASH_ENV}
+        echo 'export GCP_ZONE=us-central1' >> ${BASH_ENV}
         echo 'export CLUSTER_NAME=rok8s-things' >> ${BASH_ENV}
 
   build_image: &build_image
